@@ -11,29 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v2
+        
       - name: Send Telegram Notification
-        # if: always() memastikan notifikasi tetap dikirim walau ada step lain gagal.
-        # Anda bisa sesuaikan if: success() atau failure() jika hanya ingin notifikasi pada kondisi tertentu.
-        if: always()
         run: |
-          # Menentukan status build/job
-          STATUS="✅ Success"
-          if [ "${{ job.status }}" != "success" ]; then
-            STATUS="❌ Failed"
-          fi
-
-          # Susun pesan yang akan dikirim
-          MESSAGE="🚨 Merge to Main/Master Branch 🚨
-Repository: ${{ github.repository }}
-Actor: ${{ github.actor }}
-Ref: ${{ github.ref }}
-Status: $STATUS
-Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-
-          # Hardcoded token dan chat_id (sesuai yang Anda berikan)
-          curl -s -X POST "https://api.telegram.org/bot7665408961:AAGXwLJyy0OOO6MQa4aGkPrqGRrFcEM_LL8/sendMessage" \
+          curl -X POST "https://api.telegram.org/7665408961:AAGXwLJyy0OOO6MQa4aGkPrqGRrFcEM_lL8/sendMessage" \
             -d chat_id=1863903005 \
-            -d text="$MESSAGE" \
-            -d parse_mode="Markdown"
+            -d text="🚨 Merge to Main/Master Branch 🚨\nA merge has been made to the main/master branch. Please review the changes!"
