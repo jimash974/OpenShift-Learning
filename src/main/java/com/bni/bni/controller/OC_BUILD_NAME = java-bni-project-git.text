@@ -6,3 +6,4 @@ OC_TOKEN = GHFsBuaj8105TXBNlkyg0VA6mnlhMri6y1w9cP42ZKk
 
 
 oc login --token=sha256~xA2sLkS3EMniXBeSpBEE0qCvv2RxyKwTdSKNwrLproA --server=https://api.rm1.0a51.p1.openshiftapps.com:6443
+
