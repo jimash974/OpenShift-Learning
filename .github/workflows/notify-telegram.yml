@@ -15,6 +15,6 @@ jobs:
         
       - name: Send Telegram Notification
         run: |
-          curl -X POST "https://api.telegram.org/7665408961:AAGXwLJyy0OOO6MQa4aGkPrqGRrFcEM_lL8/sendMessage" \
+          curl -X POST "https://api.telegram.org/bot7665408961:AAGXwLJyy0OOO6MQa4aGkPrqGRrFcEM_lL8/sendMessage" \
             -d chat_id=1863903005 \
             -d text="🚨 Merge to Main/Master Branch 🚨\nA merge has been made to the main/master branch. Please review the changes!"
